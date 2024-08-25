@@ -22,7 +22,7 @@ Server
 1. Node.js express Api
 2. use zod for input validation
 3. HTTP GET /account/history - return array of history data [ { bankAccountId: <number> , operation: <Deposit/Withdrawl> , amount: <number> , dateTime: <string>  } ]
-5. HTTP POST /account/operation -  { bankAccountId: <number>, amount: <number>  }
+5. HTTP POST /account/operation -  { bankAccountId: <number>, amount: <number> , operation:  }
 6. Bonus - support GET /account/history?orderBy=<amount | dateTime >
 
 
