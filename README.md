@@ -33,3 +33,8 @@ Server
    - express
    - .env
    - axios
+
+
+# Homework 
+- watch https://www.youtube.com/watch?v=2mbHyB2VLYY
+- Play with the workbench & mysql
