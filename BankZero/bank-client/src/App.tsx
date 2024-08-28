@@ -17,6 +17,15 @@ function App() {
         }
     }
 
+    async function getHistory() {
+        try {
+            const result = await axios.get("http://localhost:3500/account/history")
+            console.log(result.data)
+        } catch (error) {
+            alert("error")
+        }
+    }
+
     useEffect(() => {
         submitTransaction()
         return () => {
@@ -27,6 +36,7 @@ function App() {
         <>
             <div>
                 <h1> Client </h1>
+                <button onClick={() => { getHistory() }}> History </button>
             </div>
         </>
     )

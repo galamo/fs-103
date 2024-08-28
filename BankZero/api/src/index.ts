@@ -10,7 +10,7 @@ app.use(bodyParser.json())
 app.use(cors())
 
 const accounts: { [accountId: number]: number } = {};
-const history = []
+const history: Array<any> = []
 
 app.get("/", (req, res, next) => {
     res.send("Api is Ok")
@@ -24,7 +24,7 @@ enum Operations {
 app.post("/account/operation", (req, res, next) => {
     const data = req.body
     const { accountId, amount, operation } = data as { accountId: number, amount: number, operation: Operations };
-    history.push({ accountId, operation, amount, timeStamp: new Date().toISOString() })
+    history.push({ accountId, operation, amount, timeStamp: new Date().toISOString(), balance: accounts[accountId] || 0 })
     if (operation?.toLowerCase() === Operations.DEPOSIT) {
         if (accounts[accountId]) {
             accounts[accountId] = amount + accounts[accountId];
@@ -48,6 +48,9 @@ app.post("/account/operation", (req, res, next) => {
 
 })
 
+app.get("/account/history", (req, res, next) => {
+    return res.json({ history })
+})
 
 
 
