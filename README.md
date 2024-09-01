@@ -123,3 +123,6 @@ SELECT Price, count(*) as NumberOfProductsINThePrice FROM Northwind.Products GRO
 8. what is the sum of all product prices in the table? 
 
 9. create report for suppliers locations, supplier city and number of suppliers 
+
+# Homework
+Watch - https://www.youtube.com/watch?v=7S_tz1z_5bA
