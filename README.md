@@ -38,3 +38,27 @@ Server
 # Homework 
 - watch https://www.youtube.com/watch?v=2mbHyB2VLYY
 - Play with the workbench & mysql
+
+
+
+# MySQL
+
+# 1/9/2024
+
+```sql
+
+SELECT ProductID,productName,Unit as productUnit FROM Northwind.Products;
+
+SELECT ProductID FROM Northwind.Products;
+
+SELECT count(*) as TotalProducts FROM Northwind.Products;
+
+SELECT * FROM Northwind.Products;
+
+SELECT  DISTINCT(country) FROM Northwind.Suppliers;
+
+
+```
+
+1. How many different cities we have in the suppliers? 
+2. How many different cities we have in the customers table?  
