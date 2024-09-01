@@ -91,3 +91,5 @@ SELECT * FROM Northwind.Products WHERE Price in ( SELECT MAX(Price) from Northwi
 
 6. how much customers are not from berlin
 7. how much suppliers we have in the list: New Orleans, Ann Arbor, Tokyo
+
+8. what is the sum of all product prices in the table? 
