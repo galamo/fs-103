@@ -57,8 +57,22 @@ SELECT * FROM Northwind.Products;
 
 SELECT  DISTINCT(country) FROM Northwind.Suppliers;
 
+SELECT  *  FROM Northwind.Products WHERE Price >= 30 AND price <= 46;
+
+SELECT  *  FROM Northwind.Products WHERE Price Between 30 AND 46;
+
+SELECT  *  FROM Northwind.Products WHERE Price Between 30 AND 46;
+
+SELECT * FROM Northwind.Customers WHERE city = 'berlin';
+
+SELECT * FROM Northwind.Customers WHERE city LIKE '%sb%';
+
 
 ```
 
 1. How many different cities we have in the suppliers? 
 2. How many different cities we have in the customers table?  
+
+3. What are the last names of all the customers that their first names starts with A 
+4. how much products we have that count as expensive product, their price is higher than 40
+5. how many suppliers we have from Japan and usa together
