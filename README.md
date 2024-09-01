@@ -77,7 +77,35 @@ SELECT * FROM Northwind.Orders order by OrderDate DESC limit 5
 SELECT * FROM Northwind.Products order by Price desc limit 1
 
 SELECT ProductID, MAX(Price) FROM Northwind.Products;
-SELECT * FROM Northwind.Products WHERE Price in ( SELECT MAX(Price) from Northwind.Products)
+SELECT * FROM Northwind.Products WHERE Price in ( SELECT MAX(Price) from Northwind.Products);
+
+SELECT 
+    *
+FROM
+    Northwind.Products
+WHERE
+    Price < (SELECT 
+            AVG(Price)
+        FROM
+            Northwind.Products)
+            
+            
+SELECT 
+    country, COUNT(*) AS NumberOfCustomers
+FROM
+    Northwind.Customers
+GROUP BY country
+Having NumberOfCustomers <10
+ORDER BY NumberOfCustomers DESC
+
+SELECT Price, count(*) as NumberOfProductsINThePrice FROM Northwind.Products GROUP BY Price
+
+-- SELECT 
+-- FROM
+-- WHERE
+-- GROUP BY
+-- ORDER BY
+-- LIMIT
 
 
 ```
@@ -93,3 +121,5 @@ SELECT * FROM Northwind.Products WHERE Price in ( SELECT MAX(Price) from Northwi
 7. how much suppliers we have in the list: New Orleans, Ann Arbor, Tokyo
 
 8. what is the sum of all product prices in the table? 
+
+9. create report for suppliers locations, supplier city and number of suppliers 
