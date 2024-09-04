@@ -134,6 +134,7 @@ Watch - https://www.youtube.com/watch?v=7S_tz1z_5bA
 
 2. create a query that return location and number of suppliers from each location.
 
+3. create a query that return the most active customer? the customer with the highest amount of orders?
 
 ```sql
 
