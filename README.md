@@ -177,3 +177,23 @@ GROUP BY role
 ORDER BY Total_Sal DESC
 
 ```
+
+
+
+# JOIN
+1. 
+
+```sql
+
+SELECT 
+    CategoryName, AVG(price) AS avg_price
+FROM
+    Northwind.Products
+        JOIN
+    Northwind.Categories ON Northwind.Products.CategoryID = Northwind.Categories.CategoryID
+GROUP BY Northwind.Products.CategoryID
+
+
+```
+
+2. Create a query that return each product name and supplier name
