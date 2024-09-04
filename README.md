@@ -126,3 +126,21 @@ SELECT Price, count(*) as NumberOfProductsINThePrice FROM Northwind.Products GRO
 
 # Homework
 Watch - https://www.youtube.com/watch?v=7S_tz1z_5bA
+
+
+
+
+# 4/9
+1. Create a query that brings an average price per category ( category id )
+```sql
+
+SELECT 
+    role, SUM(salary) AS Total_Sal, COUNT(*) AS Number_of_Emp
+FROM
+    Northwind.Employees
+WHERE
+    salary IS NOT NULL
+GROUP BY role
+ORDER BY Total_Sal DESC
+
+```
