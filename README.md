@@ -199,3 +199,68 @@ GROUP BY Northwind.Products.CategoryID
 2. Create a query that return each product name and supplier name
 3. After Writing query 2, combine also data from the categories, product name , supplier name , category name
 4. write a query that return the most busy shipper name
+
+
+```sql
+
+SELECT 
+    ProductName, SupplierName
+FROM
+    Northwind.Products
+        JOIN
+    Northwind.Suppliers ON Northwind.Products.SupplierID = Northwind.Suppliers.SupplierID
+
+
+
+
+
+SELECT 
+    ProductName, SupplierName, CategoryName
+FROM
+    Northwind.Products
+        JOIN
+    Northwind.Suppliers ON Northwind.Products.SupplierID = Northwind.Suppliers.SupplierID
+        JOIN
+    Northwind.Categories ON Northwind.Products.CategoryID = Northwind.Categories.CategoryID
+
+
+
+
+
+SELECT 
+    Northwind.Shippers.ShipperName, count(*) as number_of_orders
+FROM
+    Northwind.Orders
+        JOIN
+    Northwind.Shippers ON Northwind.Orders.ShipperID = Northwind.Shippers.ShipperID
+    GROUP BY Northwind.Orders.ShipperID
+
+
+
+
+
+SELECT 
+    *
+FROM
+    (SELECT 
+        Northwind.Shippers.ShipperName, COUNT(*) AS number_of_orders
+    FROM
+        Northwind.Orders
+    JOIN Northwind.Shippers ON Northwind.Orders.ShipperID = Northwind.Shippers.ShipperID
+    GROUP BY Northwind.Orders.ShipperID) AS table1
+WHERE
+    table1.number_of_orders = (SELECT 
+            MAX(newTable.number_of_orders) AS maxi
+        FROM
+            (SELECT 
+                Northwind.Shippers.ShipperName, COUNT(*) AS number_of_orders
+            FROM
+                Northwind.Orders
+            JOIN Northwind.Shippers ON Northwind.Orders.ShipperID = Northwind.Shippers.ShipperID
+            GROUP BY Northwind.Orders.ShipperID) AS newTable)
+
+```
+
+
+# Homework  
+1. import the new DB according the docs
