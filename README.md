@@ -267,7 +267,7 @@ WHERE
 
 write the following queries:
 
-Write a query that return every order and status: order id, status id (from orders) , id from order_details_status and status string from order_details_status
+- Write a query that return every order and status: order id, status id (from orders) , id from order_details_status and status string from order_details_status
 
 - What is the name of the best supplier ( suppliers + products)
 
