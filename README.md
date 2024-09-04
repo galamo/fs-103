@@ -136,7 +136,36 @@ Watch - https://www.youtube.com/watch?v=7S_tz1z_5bA
 
 3. create a query that return the most active customer? the customer with the highest amount of orders?
 
+4. from Northwind.OrderDetails , OrderID and the total quantity of items per order
+
 ```sql
+
+SELECT 
+    CategoryID, AVG(price) AS avg_price
+FROM
+    Northwind.Products
+GROUP BY CategoryID
+
+SELECT 
+    CustomerID, count(*) AS number_of_orders
+FROM
+    Northwind.Orders
+GROUP BY CustomerID order by number_of_orders desc
+
+SELECT 
+    EmployeeID, count(*) AS number_of_orders
+FROM
+    Northwind.Orders
+GROUP BY EmployeeID order by number_of_orders desc
+
+SELECT 
+    Country, count(*) AS number_of_suppliers
+FROM
+    Northwind.Suppliers
+GROUP BY Country order by number_of_suppliers desc
+
+
+
 
 SELECT 
     role, SUM(salary) AS Total_Sal, COUNT(*) AS Number_of_Emp
