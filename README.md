@@ -263,4 +263,18 @@ WHERE
 
 
 # Homework  
-1. import the new DB according the docs
+- import the new DB according the docs
+
+write the following queries:
+
+Write a query that return every order and status: order id, status id (from orders) , id from order_details_status and status string from order_details_status
+
+- What is the name of the best supplier ( suppliers + products)
+
+- What are the names of customers + employees for each order id ( orders, customers, employees ADV: shippers)
+
+- Write a query that returns employees and thier priviliges ( privilege_name!!!! )
+
+- Write a query that returns purchase order details and the supplier company name
+
+- Who is the best supplier which supply the highest amount of products - bring the first_name and last name, you can also group by number of products order them by the amount
