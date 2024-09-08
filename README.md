@@ -317,7 +317,11 @@ SELECT
     RIGHT JOIN northwind.employees ON northwind.orders.employee_id = northwind.employees.id
     WHERE northwind.employees.country_region = "ISR"
     GROUP BY northwind.employees.id  order by numberOfOrders desc
-    
+
 
 
 ```
+
+
+# Ex 1 
+- Write a query that return ALL the employees with the their privileges    
