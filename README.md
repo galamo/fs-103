@@ -278,3 +278,46 @@ write the following queries:
 - Write a query that returns purchase order details and the supplier company name
 
 - Who is the best supplier which supply the highest amount of products - bring the first_name and last name, you can also group by number of products order them by the amount
+
+
+
+# 8/9
+```sql
+
+SELECT 
+    distinct(order_id), concat(first_name,' ', last_name) as Full_name , status_name
+FROM
+    northwind.order_details
+        JOIN
+    northwind.orders_status ON 
+    northwind.order_details.status_id = northwind.orders_status.id
+		JOIN northwind.orders ON 
+	northwind.orders.id = northwind.order_details.order_id
+		JOIN 
+	northwind.customers ON northwind.customers.id = northwind.orders.customer_id
+
+
+
+
+SELECT 
+    supplier_id, company, COUNT(*) as numberOfProducts
+FROM
+    northwind.products_suppliers
+         JOIN
+    northwind.suppliers ON northwind.products_suppliers.supplier_id = northwind.suppliers.id
+GROUP BY supplier_id order by numberOfProducts desc;
+
+
+SELECT 
+            northwind.employees.id AS employeeId,
+            northwind.employees.first_name AS employeeName,
+            COUNT(northwind.orders.id) AS numberOfOrders
+    FROM
+        northwind.orders
+    RIGHT JOIN northwind.employees ON northwind.orders.employee_id = northwind.employees.id
+    WHERE northwind.employees.country_region = "ISR"
+    GROUP BY northwind.employees.id  order by numberOfOrders desc
+    
+
+
+```
